@@ -89,17 +89,7 @@ $menupages = $pageClassObject->getAllMenuPages();
                                 <a target="_blank" href="<?php echo $socialLinks['yt_page_link'];?>"><i class="fa fa-youtube"></i></a>
                                 <a target="_blank" href="<?php echo $socialLinks['insta_page_link'];?>"><i class="fa fa-instagram"></i></a>
                             </div>
-                            <?php 
-                            // Check if agent is logged in
-                            $agentLoggedIn = (isset($_SESSION['agent_id']) && $_SESSION['agent_id'] != '');
-                            ?>
-                            <div class="header__top__agent-btn">
-                                <?php if ($agentLoggedIn): ?>
-                                    <a href="<?php echo $SITE_URL;?>/agent/dashboard.php" class="site-btn">Dashboard</a>
-                                <?php else: ?>
-                                <a href="<?php echo $SITE_URL;?>/login" class="site-btn">LOGIN</a>
-                                <?php endif; ?>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -121,14 +111,6 @@ $menupages = $pageClassObject->getAllMenuPages();
 								<?php foreach($menupages as $item){?>
 									<li class="<?php echo (isset($_REQUEST['slug']) && $_REQUEST['slug'] == $item['slug']) ? 'active' : '';?>"><a href="<?php echo $SITE_URL;?>/page/<?php echo $item['slug'];?>"><?php echo $item['title'];?></a></li>
 								<?php } ?>
-                                <li class="header__add-cars-btn">   
-                                    <?php 
-                                    // Check if agent is logged in
-                                    $agentLoggedIn = (isset($_SESSION['agent_id']) && $_SESSION['agent_id'] != '');
-                                    $addCarsLink = $agentLoggedIn ? $SITE_URL.'/agent/add-car.php' : $SITE_URL.'/register';
-                                    ?>
-                                    <a href="<?php echo $addCarsLink;?>" class="site-btn" style="padding: 10px 25px; font-size: 14px; text-decoration: none; margin-left: 10px;">Sell my car</a>
-                                </li>
                             </ul>
                         </nav>
                     </div>
