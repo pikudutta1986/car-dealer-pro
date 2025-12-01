@@ -1,0 +1,154 @@
+.upload-area {
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 35px 20px;
+    text-align: center;
+}
+
+.upload-section {
+    position: relative;
+}
+
+.spinner-border {
+    position: absolute;
+    top: 45px;
+    left: 45%;
+    display: none;
+}
+
+.upload-area h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+#file-input {
+    display: none;
+}
+
+#upload-button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#upload-button:hover {
+    background-color: #0056b3;
+}
+
+#preview {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.preview-image-container {
+    position: relative;
+}
+
+/* #preview {
+    border: 2px dashed #ccc;
+    background: #eee;
+} */
+
+.preview-image {
+    width: 150px;
+    height: 150px;
+    margin: 0 10px 10px;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.zoom-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.zoom-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.delete-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* LOGO PREVIEW */
+.logo-preview .zoom-button, .logo-preview .delete-button {
+    bottom: -40px !important;
+    top: auto !important;
+}
+.logo-preview .zoom-button{
+    left: 0 !important;
+    right: auto !important;
+}
+.logo-preview .delete-button{
+    left: auto !important;
+    right: 0 !important;
+}
+.logo-preview-image{
+    max-width: 100%;
+    max-height: 149px;
+    border: 1px solid #ccc;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 50px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}

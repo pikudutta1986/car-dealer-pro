@@ -1,0 +1,183 @@
+/* Custom DataTables Styling - Remove Green Background from Pagination Buttons */
+
+/* Override DataTables pagination button styling */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    background: transparent !important;
+    border: 1px solid #dee2e6 !important;
+    color: #6c757d !important;
+    padding: 0.375rem 0.75rem !important;
+    margin: 0 2px !important;
+    border-radius: 0.375rem !important;
+    transition: all 0.15s ease-in-out !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Remove any additional borders or outlines */
+.dataTables_wrapper .dataTables_paginate .paginate_button:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    border: 1px solid #dee2e6 !important;
+}
+
+/* Hover state for pagination buttons */
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: #f8f9fa !important;
+    border-color: #adb5bd !important;
+    color: #495057 !important;
+}
+
+/* Active/current page button - target the button element, not anchor */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: #0d6efd !important;
+    border-color: #0d6efd !important;
+    color: #fff !important;
+}
+
+/* Active/current page button hover - target the button element */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    background: #0b5ed7 !important;
+    border-color: #0a58ca !important;
+    color: #fff !important;
+}
+
+/* Ensure the anchor tag inside current button doesn't override the button styling */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current a {
+    background: transparent !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Active button anchor tag hover */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover a {
+    background: transparent !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Disabled pagination buttons */
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+    background: transparent !important;
+    border-color: #dee2e6 !important;
+    color: #6c757d !important;
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+}
+
+/* Disabled pagination buttons hover */
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover {
+    background: transparent !important;
+    border-color: #dee2e6 !important;
+    color: #6c757d !important;
+}
+
+/* First, Previous, Next, Last buttons */
+.dataTables_wrapper .dataTables_paginate .paginate_button.first,
+.dataTables_wrapper .dataTables_paginate .paginate_button.previous,
+.dataTables_wrapper .dataTables_paginate .paginate_button.next,
+.dataTables_wrapper .dataTables_paginate .paginate_button.last {
+    background: transparent !important;
+    border: 1px solid #dee2e6 !important;
+    color: #6c757d !important;
+}
+
+/* First, Previous, Next, Last buttons hover */
+.dataTables_wrapper .dataTables_paginate .paginate_button.first:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button.previous:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button.next:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button.last:hover {
+    background: #f8f9fa !important;
+    border-color: #adb5bd !important;
+    color: #495057 !important;
+}
+
+/* Remove any green backgrounds that might be applied */
+.dataTables_wrapper .dataTables_paginate .paginate_button:not(.current) {
+    background: transparent !important;
+}
+
+/* Ensure consistent styling across all pagination elements */
+.dataTables_wrapper .dataTables_paginate {
+    text-align: center;
+    padding-top: 0.755em;
+}
+
+/* Style the pagination info */
+.dataTables_wrapper .dataTables_info {
+    color: #6c757d;
+    font-size: 0.875rem;
+}
+
+/* Style the length selector */
+.dataTables_wrapper .dataTables_length select {
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    background-color: #fff;
+}
+
+/* Style the search input */
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    margin-left: 0.5rem;
+}
+
+/* Remove any double borders from Bootstrap or DataTables */
+.dataTables_wrapper .dataTables_paginate .paginate_button,
+.dataTables_wrapper .dataTables_paginate .paginate_button:before,
+.dataTables_wrapper .dataTables_paginate .paginate_button:after {
+    border: 1px solid #dee2e6 !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Ensure active button gets blue background on the button element itself */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: #0d6efd !important;
+    border-color: #0d6efd !important;
+    color: #fff !important;
+}
+
+/* Override any anchor tag styling inside active button */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current a,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current a:link,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current a:visited,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current a:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current a:active {
+    background: transparent !important;
+    color: #fff !important;
+    border: none !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Ensure no double borders on adjacent buttons */
+.dataTables_wrapper .dataTables_paginate .paginate_button + .paginate_button {
+    border-left: 1px solid #dee2e6 !important;
+}
+
+/* Remove any inherited borders */
+.dataTables_wrapper .dataTables_paginate {
+    border: none !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button a {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        padding: 0.25rem 0.5rem !important;
+        font-size: 0.875rem !important;
+    }
+}

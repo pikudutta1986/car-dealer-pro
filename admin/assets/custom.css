@@ -1,0 +1,382 @@
+a {
+    text-decoration: none;
+    color: #858796;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.logo-div {
+    background-color: #000;
+    padding: 100px 20px 20px;
+}
+
+.logo-div img{
+    max-width: 100%;
+}
+
+.error-message {
+    height: 20px;
+    color: red;
+}
+
+.table-car-image {
+    width: 70px;
+}
+
+.border-right{
+    border-right: 1px solid #ccc !important;
+}
+
+.sb-nav-fixed .sb-topnav {
+    z-index: 1039;
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-button {
+    text-decoration: none;
+}
+
+.info-text label{
+    width: 120px;
+}
+.info-text span{
+    margin-right: 20px;
+}
+.cars-details-heading {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.user-image {
+    width: 100px;
+}
+
+.text-right {
+    text-align: right;
+}
+
+#errorMessage {
+    display: none;
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.success-message{
+    color: green;
+    font-size: 14px;
+}
+
+.error-message{
+    color: red;
+    font-size: 14px;
+}
+
+.height-25 {
+    height: 25px;
+}
+
+.ck-editor__editable {
+    min-height: 250px;
+}
+
+/* FILE UPLOAD CSS STARTS */
+.files input {
+    outline: 2px dashed #92b0b3;
+    outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    padding: 120px 0px 85px 35%;
+    text-align: center !important;
+    margin: 0;
+    width: 100% !important;
+}
+
+.files input:focus {
+    outline: 2px dashed #92b0b3;
+    outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    border: 1px solid #92b0b3;
+}
+
+.files {
+    position: relative
+}
+
+.files:after {
+    pointer-events: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 50px;
+    right: 0;
+    height: 56px;
+    content: "";
+    background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
+    display: block;
+    margin: 0 auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.color input {
+    background-color: #f1f1f1;
+}
+
+.files:before {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    right: 0;
+    height: 57px;
+    content: " or drag it here. ";
+    display: block;
+    margin: 0 auto;
+    color: #2ea591;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+/* FILES UPLOAD CSS ENDS */
+
+/* GLOBAL MODAL CSS START FROM HERE */
+
+.global-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.global-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    text-align: center;
+}
+
+.global-modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: -10px;
+}
+
+.global-modal-close:hover,
+.global-modal-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* GLOBAL MODAL CSS ENDS HERE. */
+
+
+.toast {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1055;
+}
+
+.drag-instruction {
+    margin-top: -60px;
+    height: 50px;
+    display: none;
+    padding: 10px;
+    background-color: #f0f8ff;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #007BFF;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.drag-instruction.show {
+    display: block;
+    opacity: 1;
+}
+
+
+/* GLOBAL LOADER CSS STARTS HERE */
+#global-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loader-hidden {
+    display: none !important;
+}
+
+.bounce {
+    display: flex;
+    justify-content: space-between;
+    width: 70px;
+}
+
+.bounce div {
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.bounce div:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.bounce div:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+.logout-container{
+    padding: 20px;
+}
+
+.datatable-table > tbody > tr > td{
+    vertical-align: middle !important;
+}
+.sold-price{
+    color: red;
+}
+.available{
+    background: rgba(0, 128, 0, 0.4);
+    color: #fff;
+    padding: 3px 14px;
+    border-radius: 30px;
+}
+.inactive{
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 3px 14px;
+    border-radius: 30px;
+}
+.sold-out{
+    background: rgba(255, 0, 0, 0.4);
+    color: #fff;
+    padding: 3px 14px;
+    border-radius: 30px;
+}
+.activemenu{
+    background: #000;
+}
+.create-button-div{
+    margin-top: 20px;
+}
+
+.currency-span{
+    position: absolute;
+    top: 18px;
+    left: 10px;
+}
+.account-menu{
+    margin: 0;
+}
+.account-menu li{
+    list-style: none;
+    padding: 10px 15px;
+    background: #444;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    float: left;
+    margin-right: 5px;
+}
+.account-menu li a{
+    color: #fff;
+}
+.account-menu li:hover{
+    background: #000;
+}
+.account-menu li.active{
+    background: #000;
+}
+.account-menu li a:hover{
+    color: #fff
+}
+.account-tab-content{
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+}
+
+.centered-account{
+    width: 800px;
+    margin: 0 auto;
+}
+
+/* DESKTOP ONLY */
+@media screen and (min-width: 992px) {
+    /* hide navbar for desktop */
+    .sb-topnav.navbar{
+        display: none;
+    }
+    .sb-nav-fixed #layoutSidenav #layoutSidenav_nav .sb-sidenav{
+        padding-top: 0 !important;
+    }
+    .desktop-logo{
+        max-width: max-content;
+        margin: 0 auto;
+        padding: 15px;
+        max-height: 90px;
+    }
+    .sb-nav-fixed #layoutSidenav #layoutSidenav_content{
+        top: 0;
+    }
+}
+
+/* MOBILE AND TAB ONLY */
+@media screen and (max-width: 991px) {
+    .desktop-logo{
+        display: none;
+    }
+    .mobile-logo{
+        width: auto;
+        height: 56px;
+        padding: 10px !important;
+    }
+}
+
+@keyframes bounce {
+    0%, 80%, 100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
+
+/* GLOBAL LOADER CSS ENDS HERE. */
+
+.tox-promotion, .tox-statusbar{
+    display: none !important;
+}

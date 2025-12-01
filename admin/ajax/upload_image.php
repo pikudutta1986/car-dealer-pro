@@ -1,0 +1,106 @@
+<?php 
+include('../../config/index.php');
+include('../class/Cars.php');
+
+try {
+	$cars = new Cars($dbObject);
+
+	// Error reporting disabled for production
+	// error_reporting(E_ALL);
+	// ini_set('display_errors', 1);
+
+	$response = array(
+		'success' => false,
+		'message' => ''
+	);
+	$vin = $_POST['vin'];
+	$imgSrc = $_POST['imgSrc'];
+	$fileName = $_POST['fileName'];
+
+	if ($vin != '') {
+	
+	$uploadDirRootParent = $SITE_ROOT.'uploaded-images/';
+	
+	if (!is_dir($uploadDirRootParent)) {
+        mkdir($uploadDirRootParent, 0777, true);
+    }
+	
+	$uploadDirRoot = $SITE_ROOT.'uploaded-images/car-images/';
+	
+	if (!is_dir($uploadDirRoot)) {
+        mkdir($uploadDirRoot, 0777, true);
+    }
+	
+    // SET THE UPLOAD PATH
+    $uploadDir = $SITE_ROOT.'uploaded-images/car-images/' . $vin;
+
+    if (!is_dir($uploadDir)) {
+        mkdir($uploadDir, 0777, true);
+    }
+
+    $imgDataArray = explode(',', $imgSrc);
+    
+    if (count($imgDataArray) == 2) {
+        $imageData = base64_decode($imgDataArray[1]); 
+
+        if ($imageData === false) {
+            $response['success'] = false;
+            $response['message'] = 'Invalid base64 encoding.';
+            http_response_code(400);
+            echo json_encode($response);
+            exit;
+        }
+
+        $imageType = null;
+        if (strpos($imgDataArray[0], 'image/svg+xml') !== 0) {
+            $imageType = 'svg';
+        } else {
+            if (preg_match('/^data:image\/(\w+);base64/', $imgDataArray[0], $matches)) {
+                $imageType = strtolower($matches[1]);
+            }
+        }
+
+        if ($imageType !== null) {
+            $filePath = $uploadDir . '/' . $fileName;
+
+            if (file_put_contents($filePath, $imageData)) {
+
+                // INSER CAR IMAGES WHILE UPLOADS.
+                $result = $cars->insertCarImages($_POST);
+
+                if($result) {
+                    $response['data'] = $result;
+                    $response['success'] = true;
+                    $response['message'] = 'Image uploaded successfully.';
+                    http_response_code(201);
+                    echo json_encode($response);
+                }else {
+                    $response['success'] = false;
+                    $response['message'] = 'Image with same name already exists.';
+                    http_response_code(201);
+                    echo json_encode($response);
+                }
+                
+            } else {
+                http_response_code(400);
+                echo json_encode(['error' => 'Failed to save the file.']);
+            }
+        } else {
+            http_response_code(400);
+            echo json_encode(['error' => 'Unsupported image format or invalid data URL.']);
+        }
+    } else {
+        http_response_code(400);
+        echo json_encode(['error' => 'Invalid image data URL format.']);
+    }
+	} else {
+		http_response_code(400);
+		echo json_encode(['error' => 'VIN is required.']);
+	}
+} catch (Exception $e) {
+	error_log("Error in upload_image.php: " . $e->getMessage());
+	http_response_code(500);
+	echo json_encode(['error' => 'An error occurred while processing the request.']);
+}
+
+?>
