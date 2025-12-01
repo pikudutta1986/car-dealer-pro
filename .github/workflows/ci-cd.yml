@@ -3,7 +3,7 @@ name: demo.carchecp.in CI/CD
 on:
   push:
     branches:
-      - demo  # Or your default branch
+      - main  # Or your default branch
 
 jobs:
   deploy:
