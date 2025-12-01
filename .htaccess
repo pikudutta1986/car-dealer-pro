@@ -103,6 +103,7 @@ RewriteRule ^admin/(.*)$ admin/index.php [L,QSA]
     AddOutputFilterByType DEFLATE application/x-javascript
 </IfModule>
 
+
 # Browser Caching
 <IfModule mod_expires.c>
     ExpiresActive on
